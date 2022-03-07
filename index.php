@@ -15,6 +15,7 @@
 <body>
     <center>
         <h1>This is a sample scrip!!</h1>
+        <h1>This is a sample scrip!!</h1>
         <form action="includes/script.php" method="post" enctype="multipart/form-data">
             <input type="text" name="input1" id="input1" placeholder="Location" required>
             <input type="file" name="image" id="image">
