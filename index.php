@@ -15,18 +15,12 @@
 <body>
     <center>
         <h1>This is a sample scrip!</h1>
-        <p>This is a sample subheadingasdasdasdasdasdsa</p>
+        <p>This is a sample subheading</p>
         <form action="includes/script.php" method="post" enctype="multipart/form-data">
             <input type="text" name="input1" id="input1" placeholder="Location" required>
             <input type="file" name="image" id="image">
             <button type="submit" id="submit" name="submit">Submit</button>
         </form>
-
-        <!-- <p id="locationdHolder" style="display: none;">
-            <?php
-                echo $_SESSION["locationFromDB"];
-            ?>
-        </p> -->
 
         <input type="hidden" name="locationHolder" id="locationHolder" value="<?php echo $_SESSION["locationFromDB"]; ?>" style="display: none;">
         <div>
@@ -35,11 +29,12 @@
                 $lastIDVar = $_SESSION["lastID"];
 
                 
-                $sql = "SELECT * FROM locationdetails WHERE ID = $lastIDVar";
+                // $sql = "SELECT * FROM locationdetails WHERE ID = $lastIDVar";
+                $sql = "SELECT * FROM locationdetails ORDER BY id DESC";
                 $result = mysqli_query($conn, $sql);
 
                 while ($row = mysqli_fetch_array($result)) {
-                    echo '<img src="data:image;base64,'.base64_encode($row['images']).'" height="200" width="200" class="img-thumnail" />';
+                    echo '<img src="data:image/jpeg;base64,'.base64_encode($row['images']).'" height="200" width="200" class="img-thumnail" alt="hehe" />';
                 }
             ?>
         </div>
