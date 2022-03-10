@@ -3,7 +3,7 @@
     $serverName = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
-    $dbName = "scripttesting";
+    $dbName = "uploadimage";
 
     $conn = mysqli_connect($serverName, $dbUsername, $dbPassword, $dbName);
 
